@@ -1,0 +1,757 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border:none;
+    outline:none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family:' nunito' ,sans-serif;
+    /*border:.1rem solid red;*/
+}
+
+:root{
+    --bg-color:#191f36;
+    --snd-bg-color:#262840;
+    --text-color:#fff;
+    --min-color:#59B2F4;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    
+}
+
+body{
+    background:var(--bg-color);
+    color:var(--text-color);
+
+}
+
+section{
+    min-height:;
+    padding:10rem 9% 2rem;
+}
+
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 2rem 9%;
+    background:#191f36 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+    font-size: 62.5%;
+}
+
+
+
+.logo{
+    font-size: 2.5rem;
+    color:var(--bg-color)
+    font-weight:bold;
+    cursor:default;
+    text-decoration:none;
+}
+.navbar a{
+    font-size:1.5rem;
+    color:var(--text-color);
+    margin-left:4rem;
+    font-weight:700;
+    text-decoration:none;
+    
+
+}
+
+.navbar a:hover,
+.navbar a.active{
+      color: var(--min-color);
+    background: var(--snd-bg-color);
+}
+
+#menu-icons{
+    font-size:3.6rem;
+    color:var(--text-color);
+    display: none;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:9%;
+}
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom:2rem;
+}
+
+.home-content p{
+    font-size:20px;
+}
+
+span{
+    color:var(--min-color);
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height:1.3;
+}
+
+
+
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform:translateY(-2.4rem);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* Mobile view ke liye example */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Pehle se chhupa hua */
+    }
+
+    /* Jab click karne par 'active' class jud jaye */
+    .navbar.active {
+        display: block; 
+    }
+}
+
+.home-content p{
+    font-size:1.6;
+}
+
+
+.home-img img{
+    /* Responsive controls */
+    width: 100%;            /* Allows it to shrink on mobile */
+    max-width: 400px;       /* Keeps it "small" on laptop screens */
+    height: auto;           /* Maintains aspect ratio */
+    
+    /* Optional: Styling to make it look 'Sahi' */
+    border-radius: 12px;    /* Soft rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Adds depth */
+    display: block;
+}
+
+/* Mobile specific adjustment */
+@media (max-width: 600px) {
+    .home-img {
+        max-width: 280px;   /* Even smaller for mobile screens */
+    }
+}
+.profile-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    padding: 20px;
+    width: 100%;
+}
+
+
+
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:4rem ;
+    height:4rem;
+    background: transparent;
+    border:.2rem solid var(--min-color);
+    border-radius:50%;
+    font-size:2rem;
+    color:var(--min-color);
+    margin:3rem 1.5rem 3rem 0;
+    transition:.5s ease;
+}
+
+.social-media a:hover{
+    background: var(--min-color);
+    color: var(--snd-bg-color);
+    box-shadow:0 0 1rem var(--min-color);
+}
+
+.btn{
+    display: inline-block;
+    padding:1rem 2.8rem;
+    background:var(--min-color);
+    border-radius:4rem;
+    box-shadow: 0 0 1rem var(--min-color);
+    font-size:1.6rem;
+    color:var(--snd-bg-color);
+    font-weight: bold;
+    letter-spacing:.1rem;
+    transition: .5s ease;
+}
+
+.btn:hover{
+      background: var(--min-color);
+    color: var(--snd-bg-color);
+    box-shadow:none;
+}
+
+.btn-download{
+    padding: 16px 32px;
+    font-size: 16px;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    background:var(--snd-bg-color);
+}
+
+.home-content p{
+    font-size:1.6;
+}
+
+
+.about-img img{
+    /* Responsive controls */
+    width:500px;            /* Allows it to shrink on mobile */
+    max-width: 400px;       /* Keeps it "small" on laptop screens */
+    height: auto;           /* Maintains aspect ratio */
+    
+    /* Optional: Styling to make it look 'Sahi' */
+    border-radius: 12px;    /* Soft rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Adds depth */
+    display: block;
+}
+
+
+
+.heading{
+    text-align: center;
+    font-size:4.5rem;
+}
+
+.about-content{
+    text-align: center;
+    line-height:1.2;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height:1.2;
+}
+
+.about-content h3{
+    text-align: left;
+    font-size:2.6rem;
+}
+
+.about-content p{
+    font-size:1.6rem;
+    margin: 2rem 0 3rem;
+    flex:1 1 30rem;
+    background:var(--snd-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius:2rem;
+    text-align: center;
+    border:.2rem solid var(--bg-color);
+    transition:.5s ease;
+}
+
+.about-content p:hover{
+     border-color: var(--min-color);
+    transform:scale(1.02);
+}
+
+.Service h2{
+    margin-bottom:5rem;
+}
+.Service-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:2rem;
+      margin-top:2rem;
+}
+
+
+.Service-container .Service-box{
+    flex:1 1 30rem;
+    background:var(--snd-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius:2rem;
+    text-align: center;
+    border:.2rem solid var(--bg-color);
+    transition:.5s ease;
+}
+
+.Service-container .Service-box:hover{
+    border-color: var(--min-color);
+    transform:scale(1.02);
+}
+
+.Service-box i{
+    font-size:7rem;
+    color:var(--min-color);
+}
+
+.Service-box h3{
+   font-size:2.6rem; 
+}
+
+.Service-box p{
+    font-size:1.6rem;
+    margin:1rem 0 3rem;
+}
+
+
+/* skill section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #081b29; /* Dark background as per image */
+    color: #fff;
+}
+
+.skills-section {
+    padding: 80px 10%;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.main-title span { color:#59B2F4;}
+
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns banane ke liye */
+    gap:50px                            /* Circles ke beech ka gap */
+    max-width: 600px;                      /* Ek width set karein */
+    margin: 0 auto;                        /* Poore grid ko page ke center mein laane ke liye */
+}
+
+.skills-column { flex: 1; }
+
+.sub-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-underline-offset: 10px;
+}
+
+/* --- Progress Bars (Left Side) --- */
+.skill-bar { margin: 25px 0; }
+.skill-bar .info { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.skill-bar .info img { width: 25px; }
+
+.progress-line {
+    height: 5px;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    border-radius: 10px;
+}
+
+.progress-line span {
+    height: 100%;
+    background-color: #00eeff;
+    position: absolute;
+    border-radius: 10px;
+    animation: animateBars 1.5s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+/* Percentages for Bars */
+.progress-line.html span { width: 90%; }
+.progress-line.css span { width: 60%; }
+.progress-line.js span { width: 85%; }
+.progress-line.React span { width: 50%; }
+.progress-line.PHP span { width: 60%; }
+.progress-line.mysql span { width: 65%; }
+
+
+@keyframes animateBars {
+    from { width: 0; }
+}
+
+/* --- Radial/Circle Bars (Right Side) --- */
+.radial-bars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+}
+
+.radial-bar { position: relative; }
+.radial-bar svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+
+.progress-bar {
+    fill: none;
+    stroke: #000;
+    stroke-width: 10;
+}
+
+.path {
+    fill: none;
+    stroke: #00eeff;
+    stroke-width: 10;
+    stroke-dasharray: 502; /* Circle circumference */
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animatePath 1.5s linear forwards;
+}
+
+/* Circle movement logic (Stroke-dashoffset calculation) */
+.path-1 { stroke-dashoffset: 50; } /* 90% */
+.path-2 { stroke-dashoffset: 175; } /* 65% */
+.path-3 { stroke-dashoffset: 125; } /* 75% */
+.path-4 { stroke-dashoffset: 75; } /* 85% */
+
+@keyframes animatePath {
+    to { stroke-dashoffset: inherit; }
+}
+
+.percentage {
+    position: absolute;
+    top: 35%; left: 40%;
+    font-size: 18px;
+}
+
+.text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* portfolio section*/
+
+
+.Portfolio{
+    background: var(--snd-bg-color);
+}
+
+.Portfolio h2{
+    margin-bottom:4rem;
+}
+.Portfolio-container{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:2.5rem;
+}
+
+.Portfolio-container .Portfolio-box{
+    position:relative;
+    border-radius:2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display:flex;
+}
+
+.Portfolio-box img{
+    width:100%;
+    transition:.5s ease;
+    opacity:0.7;
+    
+}
+
+.Portfolio-box:hover img{
+    transform: scale(1.1);
+
+}
+
+.Portfolio-box .Portfolio-layer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(rgba(0 ,0 ,0,0.1)), var(--min-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding:0 4rem;
+    transform:translateY(100%);
+    transition:.5s ease;
+}
+
+.Portfolio-box:hover .Portfolio-layer{
+    transform:translateY(0);
+     opacity:0.9;
+    
+}
+
+.Portfolio-layer h4{
+    font-size:3rem;
+
+}
+
+.Portfolio-layer p{
+    font-size:1.6rem;
+    margin:.3rem 0 1rem;
+    
+}
+
+.Portfolio-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:5rem;
+    height:5rem;
+    background:var(--text-color);
+    border-radius:50%;
+
+}
+
+.Portfolio-layer a i{
+    font-size:2rem;
+    color:var(--snd-bg-color);
+}
+
+
+/*  CONTACT SECTION */
+
+.contact h2{
+    margin-bottom:5rem;
+}
+.contact form{
+    max-width:70rem;
+    margin:1rem auto;
+    text-align: center;
+    margin-bottom:3rem;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width:100%;
+    padding:1.5rem;
+    font-size:1.6rem;
+    color:var(--text-color);
+    background:var(--snd-bg-color);
+    border-radius:.8rem;
+    margin:.7rem 0;
+
+}
+
+.contact form .input-box input{
+    width:49%;
+}
+
+.contact form textarea{
+    resize:none;
+}
+
+.contact form .btn{
+    margin-top:2rem;
+    cursor: pointer;
+}
+
+
+/* FOOTER SECTION */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    padding:2rem 9%;
+    background:var(--snd-bg-color);
+}
+
+
+.footer-text{
+    font-size:1.4rem;
+}
+
+.footer-iconTop{
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+    padding:.8rem 1rem;
+    background:var(--min-color);
+    border-radius:.8rem;
+    transition:.5s ease;
+}
+
+.footer-iconTop a:hover{
+    box-shadow:0 0 1rem var(--min-color);
+}
+
+.footer-iconTop a i{
+    font-size:2.4rem;
+    color:var(--snd-bg-color);
+}
+
+
+/* BREAKPOINT */
+
+@media (max-width: 1200px){
+    html{
+        font-size:55%;
+    }
+}
+
+@media (max-width:991px) {
+    .hrader{
+        padding:2rem 3%;
+    }
+
+    section{
+        padding:10rem 3%;
+    }
+
+    .Service{
+        padding:7rem;
+    }
+
+    .Portfolio{
+        padding-bottom:7rem;
+    }
+
+    .contact{
+        min-height:auto;
+    }
+
+    .footer{
+        padding:2rem 3%;
+    }
+}
+
+@media (max-width:768px) {
+    #menu-icons{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        padding:1rem 3%;
+        background:var(--bg-color);
+        border-top:.1rem solid rgba(0 ,0 ,0,0.2);
+        box-shadow:0 .5rem 1rem rgba(0 ,0 ,0,0.2);
+    }
+
+    .navbar.active{
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size:2rem;
+        margin:3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-content h3{
+        font-size:2.6rem;
+    }
+
+    .home-content h1{
+        font-size:5rem;
+    }
+
+
+    .home-content{
+        order:2;
+    }
+    .home-img img{
+        width:90vw;
+        margin-top:4rem;
+    }
+
+    .about{
+        flex-direction: column;
+    }
+
+    .about-img img{
+         width:70vw;
+        margin-top:4rem;
+    }
+
+    .Service h2{
+        margin-bottom:3rem;
+    }
+
+    .Portfolio h2{
+        margin-bottom:3rem;
+    }
+
+    .Portfolio-container{
+        grid-template-columns: repeat(2,1);
+    }
+}
+
+@media (max-width:617px) {
+    .Portfolio-container{
+        grid-template-columns:1fr;
+    }
+
+    .home-img img{
+        width:80vw;
+        margin-top:8rem;
+
+
+    .about-img img{
+        width:100vw;
+        margin-top:4rem;
+    }
+
+    
+}
+@media (max-width: 768px) {
+    .home-content {
+        text-align: center;
+    }
+    .home-img img {
+        max-width: 250px; /* Mobile par aur choti */
+    }
+    .social-media {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media (max-width:450px) {
+    html{
+        font-size:50%;
+    }
+
+    .contact form .input-box input{
+        width:100%;
+    }
+}}
