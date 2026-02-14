@@ -46,7 +46,7 @@ let navLink = document.querySelectorAll('header nav a');
  /*-----------------------------------------------------------*/
 
 
-// Line 1 par agar 'require' hai toh usey delete kar dein
+
 
 window.onscroll = () => {
     let header = document.querySelector('header');
