@@ -22,7 +22,7 @@
         <a href="home" style="color:#59B2F4;">Home</a>
         <a href="#about">About </a>
         <a href="#service">Service</a>
-        <a href="#My Skiis">My Skills</a>
+        <a href="#Skiis">My Skills</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
         </nav>
@@ -114,12 +114,12 @@
 
   <!---skill section-->
 
-    <section class="My Skiis" id="My Skiis">
+    <section class="skills" id="skills">
     <div class="container">
-        <h2 class="main-title">My <span>Skills</span></h2>
+        <h2 class="heading">My <span>Skills</span></h2>
         
         <div class="skills-wrapper">
-            <div class="skills-column">
+            <div class="technical-skills">
                 <h3 class="sub-title">Technical Skills</h3>
                 <div class="skill-bar">
                     <div class="info">
@@ -167,7 +167,7 @@
                 
             </div>
 
-            <div class="skills-column">
+            <div class="professional-skills">
                 <h3 class="sub-title">Professional Skills</h3>
                 <div class="radial-bars">
                     <div class="radial-bar">
@@ -269,12 +269,14 @@
     <section class="contact" id="contact">
      
        <h2 class="heading">Contact<span>Me</span></h2>
+       
+       <form action="https://formspree.io/f/xkovpjkj"method="POST">
+        
+        <input type="hidden" name="_next" value="my-portfolio-ashen-xi-38.vercel.app">
 
-
-      <form action="https://formspree.io/f/kk9115165@gmail.com" method="POST">
         <div class="input-box">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
+          <input type="text" name="name" placeholder="Full Name">
+          <input type="email"  name="email" placeholder="Email Address">
      </div>
 
       <div class="input-box">
@@ -282,7 +284,7 @@
           <input type="text" placeholder=" Email Subject">
      </div>
 
-     <textarea name="id" cols="30" rows="10" placeholder="Your Message"></textarea>
+     <textarea name="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
      <input type="submit" value="Send Message" class="btn">
       </form>
  </section>

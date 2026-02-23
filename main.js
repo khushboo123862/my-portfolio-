@@ -6,7 +6,7 @@ const navbar = document.querySelector('.navbar');
 
 // 2. 'onclick' event property ka use karein
 menuIcon.onclick = () => {
-    // Menu icon ko 'X' (close) icon mein toggle karein
+    
     menuIcon.classList.toggle('fa-xmark');
     
     // Navbar mein 'active' class toggle karein (taaki wo dikhe ya chupe)
@@ -16,41 +16,25 @@ menuIcon.onclick = () => {
 
 /*-------------------------------------Scroll section ------------------------*/
 
-let section = document.querySelectorAll('section');
-let navLink = document.querySelectorAll('header nav a');
- window.onscroll = () =>{
-    section.forEach(sec =>{
+let sections = document.querySelectorAll('section');
+
+window.onscroll = () => {
+    // 1. Sticky Header Logic
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    // 2. Animation Trigger on Scroll
+    sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
-        let id = sec.getAttribute('id')
 
-        if(top >= offset && top < offset + height){
-            navLink.forEach.apply(Links => {
-                Links.classList.remove('active')
-                document.querySelector('header nav a [href*='+ id +']').classList.add('active');
-            })
+        if (top >= offset && top < offset + height) {
+            sec.classList.add('show-animate');
+        } else {
+            sec.classList.remove('show-animate');
         }
-    })
- 
-
-
- /*---------------------------------*/
-
- let header = document.querySelector('header');
- header.classList.toggle('sticky' , window.scrolly > 100);
-
- 
- };
-
- /*-----------------------------------------------------------*/
-
-
-
-
-window.onscroll = () => {
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
+    });
 };
 
 const sr = ScrollReveal({
@@ -60,10 +44,15 @@ const sr = ScrollReveal({
     reset: true
 });
 
+
+sr.reveal('.technical-skills', { origin: 'left' }); 
+sr.reveal('.professional-skills', { origin: 'right' })
+
 sr.reveal('.home-content, .heading', { origin: 'top' });
 sr.reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 sr.reveal('.home-content h1, .about-img', { origin: 'left' });
 sr.reveal('.home-content p, .about-content', { origin: 'right' });
+
 
 const typed = new Typed('.typing-text', {
     strings: ['Full-stack Developer','Frontend Developer', 'Web Designer', ],

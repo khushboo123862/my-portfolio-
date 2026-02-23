@@ -329,7 +329,7 @@ span{
 }
 
 body {
-    background-color: #081b29; /* Dark background as per image */
+    background-color: #081b29;
     color: #fff;
 }
 
@@ -347,10 +347,10 @@ body {
 
 .skills-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns banane ke liye */
-    gap:50px                            /* Circles ke beech ka gap */
-    max-width: 600px;                      /* Ek width set karein */
-    margin: 0 auto;                        /* Poore grid ko page ke center mein laane ke liye */
+    grid-template-columns: repeat(2, 1fr); 
+    gap:50px                           
+    max-width: 600px;                      
+    margin: 0 auto;                       
 }
 
 .skills-column { flex: 1; }
@@ -360,6 +360,20 @@ body {
     font-size: 24px;
     margin-bottom: 30px;
     text-underline-offset: 10px;
+}
+
+
+/* Purana code hata kar ye likhein */
+.technical-bars.show-animate .progress-line span {
+    animation: animateBars 1.5s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0); /* Shuruat mein zero */
+    transform-origin: left;
+}
+
+@keyframes animateBars {
+    100% {
+        transform: scaleX(1); /* End mein full width */
+    }
 }
 
 /* --- Progress Bars (Left Side) --- */
@@ -383,6 +397,8 @@ body {
     animation: animateBars 1.5s cubic-bezier(1,0,0.5,1) forwards;
 }
 
+
+
 /* Percentages for Bars */
 .progress-line.html span { width: 90%; }
 .progress-line.css span { width: 60%; }
@@ -404,56 +420,53 @@ body {
     justify-items: center;
 }
 
+
 .radial-bar { position: relative; }
 .radial-bar svg { width: 120px; height: 120px; transform: rotate(-90deg); }
 
+
+.radial-bar .text {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;    
+    font-size: 14px;    
+    color: #fff;
+}
 .progress-bar {
     fill: none;
     stroke: #000;
     stroke-width: 10;
 }
 
-.path {
-    fill: none;
-    stroke: #00eeff;
+
+
+.radial-bar .path {
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502; 
     stroke-width: 10;
-    stroke-dasharray: 502; /* Circle circumference */
-    stroke-dashoffset: 502;
+    stroke: #0ef;
+    fill: none;
     stroke-linecap: round;
-    animation: animatePath 1.5s linear forwards;
+    transition: stroke-dashoffset 1.5s ease; /* Animation smooth karne ke liye */
 }
 
-/* Circle movement logic (Stroke-dashoffset calculation) */
-.path-1 { stroke-dashoffset: 50; } /* 90% */
-.path-2 { stroke-dashoffset: 175; } /* 65% */
-.path-3 { stroke-dashoffset: 125; } /* 75% */
-.path-4 { stroke-dashoffset: 75; } /* 85% */
 
-@keyframes animatePath {
-    to { stroke-dashoffset: inherit; }
-}
+.skills.show-animate .path-1 { stroke-dashoffset: 50; }  /* 90% fill */
+.skills.show-animate .path-2 { stroke-dashoffset: 175; } /* 65% fill */
+.skills.show-animate .path-3 { stroke-dashoffset: 125; } /* 75% fill */
+.skills.show-animate .path-4 { stroke-dashoffset: 75; }  /* 85% fill */
 
-.percentage {
+.radial-bar .percentage {
     position: absolute;
-    top: 35%; left: 40%;
-    font-size: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Bilkul center mein laane ke liye */
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff; /* Check karein ki color background se match toh nahi ho raha */
+    z-index: 10; /* Circle ke upar dikhane ke liye */
 }
 
-.text {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-}
-/* portfolio section*/
-
-
-.Portfolio{
-    background: var(--snd-bg-color);
-}
-
-.Portfolio h2{
-    margin-bottom:4rem;
-}
 .Portfolio-container{
     display:grid;
     grid-template-columns: repeat(2,1fr);
