@@ -37,6 +37,8 @@ window.onscroll = () => {
     });
 };
 
+
+
 const sr = ScrollReveal({
     distance: '80px',
     duration: 2000,
@@ -61,3 +63,32 @@ const typed = new Typed('.typing-text', {
     backDelay: 1000,
     loop: true
 });
+
+
+var form = document.getElementById("my-form");
+
+async function handleSubmit(event) {
+  event.preventDefault(); // Isse page refresh nahi hoga
+  var status = document.getElementById("status");
+  var data = new FormData(event.target);
+
+  fetch("https://formspree.io/f/xkovpjkj", {
+    method: "POST",
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      status.innerHTML = "Thanks! Message sent successfully.";
+      form.reset(); // Form khali ho jayega
+    } else {
+      status.innerHTML = "Oops! There was a problem.";
+    }
+  }).catch(error => {
+    status.innerHTML = "Oops! Connection error.";
+  });
+}
+
+form.addEventListener("submit", handleSubmit);
+
